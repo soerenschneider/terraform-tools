@@ -6,7 +6,7 @@ ARG TFLINT_VERSION=v0.49.0
 RUN go install github.com/aquasecurity/tfsec/cmd/tfsec@${TFSEC_VERSION}
 RUN go install github.com/terraform-linters/tflint@${TFLINT_VERSION}
 
-FROM python:3.11.7-slim AS run
+FROM python:3.12.1-slim AS run
 
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
